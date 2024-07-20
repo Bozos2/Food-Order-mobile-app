@@ -12,7 +12,7 @@ const Burger = () => {
       <View className="relative mt-5">
         <Image
           source={BurgerBanner}
-          className="w-[340px] h-[150px]"
+          className="max-w-[360px] w-full h-[150px]"
           resizeMode="contain"
           width={340}
           height={150}

@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         primary: "#ff9f1c",
         secondary: "#271b27",
-        background: "#f4f4f4",
+        background: "#eaeaea",
       },
       fontFamily: {
         mlight: ["Merienda-Light", "sans-serif"],
