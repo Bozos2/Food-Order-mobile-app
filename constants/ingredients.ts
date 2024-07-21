@@ -7,6 +7,7 @@ import cabbage from "../assets/images/ingredients/cabbage.png";
 import cheese from "../assets/images/ingredients/cheese.png";
 import chilli from "../assets/images/ingredients/chilli.png";
 import chocolate from "../assets/images/ingredients/chocolate.png";
+import chicken from "../assets/images/ingredients/chicken.png";
 import coconut from "../assets/images/ingredients/coconut.png";
 import corn from "../assets/images/ingredients/corn.png";
 import cucumber from "../assets/images/ingredients/cucumber.png";
@@ -20,6 +21,7 @@ import mayonese from "../assets/images/ingredients/mayonese.png";
 import mushrooms from "../assets/images/ingredients/mushrooms.png";
 import olives from "../assets/images/ingredients/olives.png";
 import onion from "../assets/images/ingredients/onion.png";
+import orange from "../assets/images/ingredients/orange.png";
 import pepperoni from "../assets/images/ingredients/pepperoni.png";
 import pistachio from "../assets/images/ingredients/pistachio.png";
 import salad from "../assets/images/ingredients/salad.png";
@@ -40,6 +42,7 @@ export default {
   cheese,
   chilli,
   chocolate,
+  chicken,
   coconut,
   corn,
   cucumber,
@@ -53,6 +56,7 @@ export default {
   mushrooms,
   olives,
   onion,
+  orange,
   pepperoni,
   pistachio,
   salad,

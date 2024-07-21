@@ -28,7 +28,7 @@ const MealCard = ({
           resizeMode="contain"
         />
       </View>
-      <Text className="text-xl font-msemibold text-center truncate -mt-6">
+      <Text className="text-xl font-msemibold text-center truncate -mt-8">
         {title}
       </Text>
       <Text className="font-mlight text-xs px-2">{description}</Text>

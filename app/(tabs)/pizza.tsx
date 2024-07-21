@@ -1,4 +1,4 @@
-import { Image, View, Text, FlatList, ScrollView } from "react-native";
+import { Image, View, Text, FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
 import { router } from "expo-router";
@@ -34,13 +34,14 @@ const Pizza = () => {
         keyExtractor={(item) => item.id}
         numColumns={2}
         columnWrapperStyle={{ justifyContent: "space-between" }}
+        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <MealCard
             title={item.title}
             description={item.description}
             image={item.image}
             price={item.price}
-            onPress={() => router.push("/")}
+            onPress={() => router.push(`/details/${item.id}`)}
           />
         )}
       />

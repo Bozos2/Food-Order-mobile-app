@@ -3,6 +3,17 @@ import margharita from "../assets/images/pizza/margharita.png";
 import pepperoni from "../assets/images/pizza/pepperoni.png";
 import tonno from "../assets/images/pizza/tonno.png";
 import hawaii from "../assets/images/pizza/hawaii.png";
+
+import bacon from "../assets/images/burgers/bacon-burger.png";
+import doubleSalad from "../assets/images/burgers/big-salad-burger.png";
+import chicken from "../assets/images/burgers/chicken-burger.png";
+import classic from "../assets/images/burgers/classic-burger.png";
+
+import iceMix from "../assets/images/ice-cream/ice-mix.png";
+import iceHazelnut from "../assets/images/ice-cream/ice-hazelnut.png";
+import iceStrawberry from "../assets/images/ice-cream/ice-strawberry.png";
+import icePistachio from "../assets/images/ice-cream/ice-pistachio.png";
+
 import { ingredients } from "../constants";
 
 export const pizzaData = [
@@ -84,3 +95,120 @@ export const pizzaData = [
     ],
   },
 ];
+
+export const burgerData = [
+  {
+    id: "6",
+    title: "Bacon",
+    description: "Burger with bacon and cheese",
+    price: 14,
+    time: 12,
+    calories: 250,
+    image: bacon,
+    ingredients: [
+      { name: "beef", image: ingredients.burgerMeat },
+      { name: "lettuce", image: ingredients.salad },
+      { name: "tomato", image: ingredients.tomato },
+      { name: "cheese", image: ingredients.cheese },
+      { name: "bacon", image: ingredients.bacon },
+    ],
+  },
+  {
+    id: "7",
+    title: "Double Salad",
+    description: "Burger with double salad",
+    price: 16,
+    time: 15,
+    calories: 190,
+    image: doubleSalad,
+    ingredients: [
+      { name: "beef", image: ingredients.burgerMeat },
+      { name: "tomato", image: ingredients.tomato },
+      { name: "cheese", image: ingredients.cheese },
+      { name: "onion", image: ingredients.onion },
+      { name: "lettuce", image: ingredients.salad },
+    ],
+  },
+  {
+    id: "8",
+    title: "Classic",
+    description: "Pizza with tomato and lettuce",
+    price: 10,
+    time: 12,
+    calories: 200,
+    image: classic,
+    ingredients: [
+      { name: "beef", image: ingredients.burgerMeat },
+      { name: "tomato", image: ingredients.tomato },
+      { name: "cheese", image: ingredients.cheese },
+      { name: "onion", image: ingredients.onion },
+      { name: "lettuce", image: ingredients.salad },
+      { name: "cucumber", image: ingredients.cucumber },
+    ],
+  },
+  {
+    id: "9",
+    title: "Chicken",
+    description: "Burger with chicken and mayonese",
+    price: 14,
+    time: 12,
+    calories: 160,
+    image: chicken,
+    ingredients: [
+      { name: "chicken", image: ingredients.chicken },
+      { name: "tomato", image: ingredients.tomato },
+      { name: "cheese", image: ingredients.cheese },
+      { name: "mayonese", image: ingredients.mayonese },
+      { name: "lettuce", image: ingredients.salad },
+    ],
+  },
+];
+
+export const IceCreamData = [
+  {
+    id: "10",
+    title: "Mix",
+    description: "Big mix ice cream",
+    price: 12,
+    time: 2,
+    calories: 120,
+    image: iceMix,
+    ingredients: [
+      { name: "vanilla", image: ingredients.vanilla },
+      { name: "strawberry", image: ingredients.strawberry },
+      { name: "hazel", image: ingredients.hazel },
+    ],
+  },
+  {
+    id: "11",
+    title: "Hazelnut",
+    description: "Ice cream with hazelnut",
+    price: 6,
+    time: 2,
+    calories: 90,
+    image: iceHazelnut,
+    ingredients: [{ name: "hazelnut", image: ingredients.hazel }],
+  },
+  {
+    id: "12",
+    title: "Strawberry",
+    description: "Ice cream with strawberry",
+    price: 6,
+    time: 2,
+    calories: 110,
+    image: iceStrawberry,
+    ingredients: [{ name: "strawberry", image: ingredients.strawberry }],
+  },
+  {
+    id: "13",
+    title: "Pistachio",
+    description: "Ice cream with pistachio",
+    price: 7,
+    time: 3,
+    calories: 120,
+    image: icePistachio,
+    ingredients: [{ name: "pistachio", image: ingredients.pistachio }],
+  },
+];
+
+export const combinedData = [...pizzaData, ...burgerData, ...IceCreamData];

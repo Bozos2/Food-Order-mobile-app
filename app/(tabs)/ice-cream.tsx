@@ -1,21 +1,23 @@
-import { Image, View, Text } from "react-native";
+import { Image, View, Text, FlatList } from "react-native";
 import React from "react";
 import { router } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import iceCreamBanner from "../../assets/images/ice-cream-banner.png";
 import CustomButton from "../../components/custom-button";
 
+import MealCard from "../../components/meal-card";
+import { IceCreamData } from "../../lib/meals-data";
+
 const IceCream = () => {
   return (
-    <View className="flex flex-col mt-16 h-full px-4">
-      <Text className="text-4xl font-bold">Ice Cream</Text>
+    <SafeAreaView className="flex-1 pt-16 px-4 bg-background w-full">
+      <Text className="text-4xl font-mbold">Ice Cream menu</Text>
       <View className="relative mt-5">
         <Image
           source={iceCreamBanner}
           className="max-w-[360px] w-full h-[150px]"
           resizeMode="contain"
-          width={340}
-          height={150}
         />
         <View className="absolute left-3 bottom-4">
           <CustomButton
@@ -26,7 +28,23 @@ const IceCream = () => {
           />
         </View>
       </View>
-    </View>
+      <FlatList
+        data={IceCreamData}
+        keyExtractor={(item) => item.id}
+        numColumns={2}
+        columnWrapperStyle={{ justifyContent: "space-between" }}
+        showsVerticalScrollIndicator={false}
+        renderItem={({ item }) => (
+          <MealCard
+            title={item.title}
+            description={item.description}
+            image={item.image}
+            price={item.price}
+            onPress={() => router.push(`/details/${item.id}`)}
+          />
+        )}
+      />
+    </SafeAreaView>
   );
 };
 

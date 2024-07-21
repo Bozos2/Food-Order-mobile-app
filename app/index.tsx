@@ -12,7 +12,7 @@ import CustomButton from "../components/custom-button";
 const HomePage = () => {
   return (
     <SafeAreaView className="h-full flex flex-col  bg-background">
-      <View className="w-full flex flex-col mt-4">
+      <View className="w-full flex flex-col mt-12">
         <View className="relative w-full">
           <Image
             source={landing}
