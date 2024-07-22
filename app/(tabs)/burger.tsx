@@ -12,7 +12,10 @@ import { burgerData } from "../../lib/meals-data";
 
 const Burger = () => {
   return (
-    <SafeAreaView className="flex-1 pt-16 px-4 bg-background w-full">
+    <SafeAreaView
+      className="flex-1 pt-16 px-4 bg-background w-full"
+      edges={["left", "right", "top"]}
+    >
       <Text className="text-4xl font-mbold">Burgers menu</Text>
       <View className="relative mt-5">
         <Image
@@ -34,6 +37,7 @@ const Burger = () => {
         keyExtractor={(item) => item.id}
         numColumns={2}
         columnWrapperStyle={{ justifyContent: "space-between" }}
+        contentContainerStyle={{ paddingBottom: 20 }}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <MealCard

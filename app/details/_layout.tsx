@@ -14,7 +14,7 @@ const DetailLayout = () => {
           onPress={() => console.log("heheh")}
           containerStyles="w-72 h-14 mx-auto mt-3"
           textStyles="font-mbold text-2xl"
-        ></CustomButton>
+        />
       </View>
     </>
   );

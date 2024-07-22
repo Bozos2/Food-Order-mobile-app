@@ -11,7 +11,10 @@ import { IceCreamData } from "../../lib/meals-data";
 
 const IceCream = () => {
   return (
-    <SafeAreaView className="flex-1 pt-16 px-4 bg-background w-full">
+    <SafeAreaView
+      className="flex-1 pt-16 px-4 bg-background w-full"
+      edges={["left", "right", "top"]}
+    >
       <Text className="text-4xl font-mbold">Ice Cream menu</Text>
       <View className="relative mt-5">
         <Image
@@ -33,6 +36,7 @@ const IceCream = () => {
         keyExtractor={(item) => item.id}
         numColumns={2}
         columnWrapperStyle={{ justifyContent: "space-between" }}
+        contentContainerStyle={{ paddingBottom: 20 }}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <MealCard

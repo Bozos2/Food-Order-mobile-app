@@ -11,7 +11,10 @@ import { pizzaData } from "../../lib/meals-data";
 
 const Pizza = () => {
   return (
-    <SafeAreaView className="flex-1 pt-16 px-4 bg-background w-full">
+    <SafeAreaView
+      className="flex-1 pt-16 px-4 bg-background w-full"
+      edges={["left", "right", "top"]}
+    >
       <Text className="text-4xl font-mbold">Pizza menu</Text>
       <View className="relative mt-5">
         <Image
@@ -34,6 +37,7 @@ const Pizza = () => {
         keyExtractor={(item) => item.id}
         numColumns={2}
         columnWrapperStyle={{ justifyContent: "space-between" }}
+        contentContainerStyle={{ paddingBottom: 20 }}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <MealCard
