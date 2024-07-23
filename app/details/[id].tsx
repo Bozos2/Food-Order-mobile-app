@@ -91,7 +91,7 @@ export default function DetailsScreen() {
           <Text className="text-2xl font-semibold mt-10">Ingredients</Text>
           <View className="flex flex-row gap-4 flex-wrap mt-0.5">
             {selectedItem.ingredients.map((item, index) => (
-              <View className="flex flex-col items-center">
+              <View className="flex flex-col items-center" key={index}>
                 <View
                   key={index}
                   className="flex items-center bg-white p-1.5 rounded-full"

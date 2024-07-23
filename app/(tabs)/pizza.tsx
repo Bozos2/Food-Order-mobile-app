@@ -25,7 +25,7 @@ const Pizza = () => {
         <View className="absolute left-3 bottom-4">
           <CustomButton
             title="Try Now"
-            onPress={() => router.push("/")}
+            onPress={() => router.push("/create-pizza")}
             textStyles="font-msemibold"
             containerStyles="w-32"
           />
