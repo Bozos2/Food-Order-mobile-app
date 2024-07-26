@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { SplashScreen, Stack, Tabs } from "expo-router";
 import { useFonts } from "expo-font";
 
+import { AppProvider } from "../context/global-provider";
+
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
@@ -33,12 +35,14 @@ const RootLayout = () => {
   }
 
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="details" options={{ headerShown: false }} />
-      <Stack.Screen name="(create)" options={{ headerShown: false }} />
-    </Stack>
+    <AppProvider>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="details/[id]" options={{ headerShown: false }} />
+        <Stack.Screen name="(create)" options={{ headerShown: false }} />
+      </Stack>
+    </AppProvider>
   );
 };
 

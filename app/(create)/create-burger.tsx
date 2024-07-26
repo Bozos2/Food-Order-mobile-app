@@ -1,9 +1,10 @@
 import { Image, View, Text, TouchableOpacity, ScrollView } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 
 import CustomCheckbox from "../../components/custom-checkbox";
+import { useAppContext } from "../../context/global-provider";
 
 import Ionicons from "@expo/vector-icons/Ionicons";
 import paper from "../../assets/images/paper.png";
@@ -11,7 +12,14 @@ import paper from "../../assets/images/paper.png";
 import { burgerIngredients } from "../../constants/checkbox-ingredients";
 
 const CreateBurger = () => {
+  const { setPrice, setIngredients } = useAppContext();
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+
+  useEffect(() => {
+    const newPrice = 7 + selectedOptions.length;
+    setPrice(newPrice);
+    setIngredients(selectedOptions);
+  }, [selectedOptions, setPrice]);
 
   const handleCheckboxChange = (label: string) => {
     setSelectedOptions((prev) =>

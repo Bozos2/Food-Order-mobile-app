@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import { useLocalSearchParams } from "expo-router";
-import { Image, View, Text, TouchableOpacity, ScrollView } from "react-native";
+import {
+  Image,
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  Alert,
+} from "react-native";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { combinedData } from "../../lib/meals-data";
+import { useAppContext } from "../../context/global-provider";
+import CustomButton from "../../components/custom-button";
 
 import AntDesign from "@expo/vector-icons/AntDesign";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
@@ -12,10 +21,28 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function DetailsScreen() {
   const { id } = useLocalSearchParams();
+  const { addToCart } = useAppContext();
+  const [quantity, setQuantity] = useState(1);
 
   const selectedItem = combinedData.find((item) => item.id === id);
 
-  const [quantity, setQuantity] = useState(1);
+  const ingredientNames = selectedItem?.ingredients.map(
+    (ingredient) => ingredient.name
+  );
+
+  const dataToCart = {
+    id: selectedItem?.id!,
+    title: selectedItem?.title,
+    image: selectedItem?.image,
+    price: selectedItem?.price,
+    amount: quantity,
+    ingredients: ingredientNames,
+  };
+
+  const handleAddToCart = () => {
+    addToCart(dataToCart);
+    Alert.alert("Success", "Item added to cart!");
+  };
 
   const increaseQuantity = () => setQuantity((prev) => prev + 1);
   const decreaseQuantity = () => {
@@ -33,7 +60,10 @@ export default function DetailsScreen() {
   }
 
   return (
-    <SafeAreaView className="h-full relative" edges={["left", "right"]}>
+    <SafeAreaView
+      className="h-full relative bg-background"
+      edges={["left", "right"]}
+    >
       <ScrollView showsVerticalScrollIndicator={false}>
         <TouchableOpacity
           onPress={() => router.back()}
@@ -108,6 +138,14 @@ export default function DetailsScreen() {
           </View>
         </View>
       </ScrollView>
+      <View className="bottom-0 left-0 relative h-24 bg-background">
+        <CustomButton
+          title="Add to cart"
+          onPress={handleAddToCart}
+          containerStyles="w-72 h-14 mx-auto mt-3"
+          textStyles="font-mbold text-2xl"
+        />
+      </View>
     </SafeAreaView>
   );
 }
