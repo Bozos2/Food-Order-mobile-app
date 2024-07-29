@@ -35,7 +35,11 @@ const CreatePizza = () => {
       edges={["left", "right", "top"]}
     >
       <View className="pt-6 flex flex-row gap-6 items-center">
-        <TouchableOpacity onPress={() => router.back()} activeOpacity={0.7}>
+        <TouchableOpacity
+          onPress={() => router.back()}
+          activeOpacity={0.7}
+          className="rounded-full p-1.5 bg-white shadow-lg"
+        >
           <Ionicons name="arrow-back-outline" size={36} color="black" />
         </TouchableOpacity>
         <Text className="text-2xl font-bold text-secondary">

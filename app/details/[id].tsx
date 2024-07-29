@@ -41,7 +41,6 @@ export default function DetailsScreen() {
 
   const handleAddToCart = () => {
     addToCart(dataToCart);
-    Alert.alert("Success", "Item added to cart!");
   };
 
   const increaseQuantity = () => setQuantity((prev) => prev + 1);

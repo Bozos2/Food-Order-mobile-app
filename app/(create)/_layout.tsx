@@ -1,25 +1,38 @@
 import { Stack } from "expo-router";
-import { View, Text, Alert } from "react-native";
+import { View, Text } from "react-native";
 import CustomButton from "../../components/custom-button";
-import { router } from "expo-router";
+import { router, usePathname } from "expo-router";
 
 import { useAppContext } from "../../context/global-provider";
 import customImg from "../../assets/images/custom-meal.png";
 
 const CreateLayout = () => {
   const { price, addToCart, ingredients, cart } = useAppContext();
+  const pathname = usePathname();
 
   const handleAddToCart = () => {
     addToCart({
       id: (cart.length + 50).toString(),
-      title: "Custom Meal",
+      title: getTitle(),
       price,
       ingredients,
       image: customImg,
       amount: 1,
     });
-    Alert.alert("Success", "Item added to cart!");
     router.push("/cart");
+  };
+
+  const getTitle = () => {
+    switch (pathname) {
+      case "/create-pizza":
+        return "Custom Pizza";
+      case "/create-burger":
+        return "Custom Burger";
+      case "/create-ice-cream":
+        return "Custom Ice Cream";
+      default:
+        return "Custom Meal";
+    }
   };
 
   return (

@@ -22,17 +22,18 @@ const TabsLayout = () => {
   return (
     <>
       <Tabs
-        screenOptions={{
+        screenOptions={({ route }) => ({
           tabBarActiveTintColor: "#ff8c42",
           tabBarInactiveTintColor: "#bdbdd6",
           tabBarShowLabel: false,
           tabBarStyle: {
+            display: route.name === "cart" ? "none" : "flex",
             backgroundColor: "#f1f1f1",
             borderTopWidth: 1,
             borderTopColor: "#bdbdd6",
             height: 94,
           },
-        }}
+        })}
       >
         <Tabs.Screen
           name="pizza"
@@ -88,9 +89,7 @@ const TabsLayout = () => {
           }}
         />
       </Tabs>
-
-      {/* <Loader isLoading={loading} /> */}
-      <StatusBar backgroundColor="#161622" style="light" />
+      <StatusBar backgroundColor="#161622" style="dark" />
     </>
   );
 };
