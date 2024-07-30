@@ -43,7 +43,11 @@ export default function DetailsScreen() {
     addToCart(dataToCart);
   };
 
-  const increaseQuantity = () => setQuantity((prev) => prev + 1);
+  const increaseQuantity = () => {
+    if (quantity < 5) {
+      setQuantity((prev) => prev + 1);
+    }
+  };
   const decreaseQuantity = () => {
     if (quantity > 1) {
       setQuantity((prev) => prev - 1);
