@@ -12,7 +12,7 @@ import { IceCreamData } from "../../lib/meals-data";
 const IceCream = () => {
   return (
     <SafeAreaView
-      className="flex-1 pt-16 px-4 bg-background w-full"
+      className="flex-1 pt-6 px-4 bg-background w-full"
       edges={["left", "right", "top"]}
     >
       <Text className="text-4xl font-mbold">Ice Cream menu</Text>
